@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.1" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_1.xsd">
+    <servlet>
+        <servlet-name>StartSessionServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.StartSessionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TakeTestServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.TakeTestServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AnswerTestServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.AnswerTestServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EndSessionServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.EndSessionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>StoreOperatorServlet</servlet-name>
+        <servlet-class>za.ac.tut.web.StoreOperatorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StartSessionServlet</servlet-name>
+        <url-pattern>/StartSessionServlet.do</url-pattern>
+    </servlet-mapping>
+    <context-param>
+        <param-name>computer_name</param-name>
+        <param-value>Siri</param-value>
+    </context-param>
+    <servlet-mapping>
+        <servlet-name>TakeTestServlet</servlet-name>
+        <url-pattern>/TakeTestServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AnswerTestServlet</servlet-name>
+        <url-pattern>/AnswerTestServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EndSessionServlet</servlet-name>
+        <url-pattern>/EndSessionServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StoreOperatorServlet</servlet-name>
+        <url-pattern>/StoreOperatorServlet.do</url-pattern>
+    </servlet-mapping>
+</web-app>

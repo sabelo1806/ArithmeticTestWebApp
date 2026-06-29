@@ -1,0 +1,452 @@
+/* =============================================
+   ARITHMETIC TEST WEB APP — Academic Theme
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap');
+
+/* ── Token System ── */
+:root {
+  --navy:       #0F1B3C;
+  --navy-light: #1A2E5A;
+  --parchment:  #F7F3E9;
+  --parchment-dark: #EDE7D4;
+  --gold:       #C9A227;
+  --gold-light: #E8C84A;
+  --slate:      #4A5568;
+  --slate-light:#718096;
+  --success:    #2D6A4F;
+  --success-bg: #D4EDDA;
+  --error:      #9B2335;
+  --error-bg:   #F8D7DA;
+  --white:      #FFFFFF;
+  --shadow:     0 4px 24px rgba(15,27,60,0.12);
+  --shadow-lg:  0 8px 40px rgba(15,27,60,0.18);
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--parchment);
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(201,162,39,0.07) 0%, transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(15,27,60,0.06) 0%, transparent 50%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  color: var(--navy);
+}
+
+/* ── Site Header ── */
+.site-header {
+  width: 100%;
+  background-color: var(--navy);
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 3px solid var(--gold);
+}
+
+.site-header .institution {
+  font-family: 'Crimson Pro', Georgia, serif;
+  color: var(--parchment);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+}
+
+.site-header .crest {
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-family: 'Crimson Pro', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* ── Main Card ── */
+.exam-card {
+  background: var(--white);
+  border-radius: 4px;
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 600px;
+  margin: 48px auto;
+  overflow: hidden;
+  border-top: 5px solid var(--navy);
+}
+
+/* ── Card Header Band ── */
+.card-header {
+  background-color: var(--navy);
+  padding: 28px 36px 24px;
+  position: relative;
+}
+
+.card-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+}
+
+.card-header .label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.card-header h1,
+.card-header h2 {
+  font-family: 'Crimson Pro', Georgia, serif;
+  color: var(--white);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.card-header h1 { font-size: 2rem; }
+.card-header h2 { font-size: 1.6rem; }
+
+/* ── Progress Bar ── */
+.progress-track {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.progress-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid rgba(201,162,39,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.45);
+  transition: all 0.3s ease;
+}
+
+.progress-dot.answered {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+}
+
+.progress-dot.current {
+  border-color: var(--gold);
+  color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,162,39,0.25);
+}
+
+.progress-label {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.08em;
+  margin-left: 4px;
+}
+
+/* ── Card Body ── */
+.card-body {
+  padding: 36px 36px 32px;
+}
+
+/* ── Question Display ── */
+.question-box {
+  background: var(--parchment);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 4px 4px 0;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+}
+
+.question-box .q-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-light);
+  margin-bottom: 8px;
+}
+
+.question-box .q-text {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* ── Info Text ── */
+.intro-text {
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: var(--slate);
+  margin-bottom: 28px;
+}
+
+.greeting-name {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.3rem;
+  color: var(--navy);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* ── Form Elements ── */
+.field-group {
+  margin-bottom: 20px;
+}
+
+label.field-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #D1C9B8;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: var(--navy);
+  background: var(--white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,162,39,0.18);
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: '▾';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--slate-light);
+  pointer-events: none;
+  font-size: 1rem;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-block;
+  padding: 13px 32px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  text-decoration: none;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background-color: var(--navy);
+  color: var(--white);
+  box-shadow: 0 2px 8px rgba(15,27,60,0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--navy-light);
+  box-shadow: 0 4px 12px rgba(15,27,60,0.3);
+}
+
+.btn-accent {
+  background-color: var(--gold);
+  color: var(--navy);
+  box-shadow: 0 2px 8px rgba(201,162,39,0.3);
+}
+
+.btn-accent:hover {
+  background-color: var(--gold-light);
+  box-shadow: 0 4px 12px rgba(201,162,39,0.4);
+}
+
+.btn-link {
+  background: none;
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+  padding: 11px 28px;
+}
+
+.btn-link:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* ── Results Table ── */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.results-table tr { border-bottom: 1px solid var(--parchment-dark); }
+.results-table tr:last-child { border-bottom: none; }
+
+.results-table td {
+  padding: 13px 8px;
+  color: var(--slate);
+}
+
+.results-table td:first-child {
+  font-weight: 500;
+  color: var(--navy);
+  width: 55%;
+}
+
+.results-table td:last-child {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* ── Outcome Badge ── */
+.outcome-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.outcome-badge.correct {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.outcome-badge.incorrect {
+  background: var(--error-bg);
+  color: var(--error);
+}
+
+/* ── Score Display ── */
+.score-display {
+  text-align: center;
+  padding: 28px 0 20px;
+  border-bottom: 1px solid var(--parchment-dark);
+  margin-bottom: 28px;
+}
+
+.score-number {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.score-number .percent {
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+.score-caption {
+  font-size: 0.8rem;
+  color: var(--slate-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+/* ── Divider ── */
+.divider {
+  height: 1px;
+  background: var(--parchment-dark);
+  margin: 28px 0;
+}
+
+/* ── Card Footer ── */
+.card-footer {
+  background: var(--parchment);
+  border-top: 1px solid var(--parchment-dark);
+  padding: 18px 36px;
+  font-size: 0.78rem;
+  color: var(--slate-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ── Operator Icons ── */
+.operator-option {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.op-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--parchment);
+  border: 2px solid var(--parchment-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--navy);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .exam-card { margin: 0; border-radius: 0; border-top: none; }
+  .card-body, .card-header { padding: 24px 20px; }
+  .card-footer { padding: 14px 20px; }
+  .score-number { font-size: 3rem; }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
