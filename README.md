@@ -99,3 +99,21 @@ It showcases the ability to create a complete web application using Java technol
 * Create an administrator dashboard
 * Improve accessibility features
 
+ ## 📸 Screenshots
+
+### Home Page
+
+![Home Page](screenshots/home-page.png)
+
+---
+
+### Arithmetic Test Page
+
+![Test Page](screenshots/test-page.png)
+
+---
+
+### Results Summary Page
+
+![Results Page](screenshots/results-page.png)
+ 
