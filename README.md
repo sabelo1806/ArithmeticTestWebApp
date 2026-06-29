@@ -1,119 +1,153 @@
-# Arithmetic Test Web App
+# 🧮 Arithmetic Test Web App
 
-A Java-based web application that provides an interactive arithmetic assessment platform. The application allows users to select an arithmetic operator, complete a set of generated questions, submit answers, and receive a final performance summary.
+A Java-based interactive arithmetic assessment web application that allows users to test their mathematical skills through dynamically generated questions.
 
-The project combines Java Servlet technology with JSP pages and modern CSS styling to create a clean academic-style testing experience.
+The system enables users to select an arithmetic operator, complete a generated test, submit answers, and receive an automatically calculated performance summary.
 
-## Features
+Built using **Java Servlet technology, JSP, HTML5, and CSS3**, this project demonstrates full-stack Java web development concepts including server-side processing, session management, and responsive user interface design.
 
-* Interactive arithmetic assessment system
-* User-selected arithmetic operators
-* Dynamic question generation
-* Answer submission and validation
-* Session-based test tracking
-* Automatic score calculation
-* Result summary page
-* Academic exam-inspired user interface
-* Responsive web design
+---
 
-## Technologies Used
+## 🚀 Features
+
+✅ Interactive arithmetic testing system  
+✅ User-selected arithmetic operators  
+✅ Randomly generated questions  
+✅ Answer submission and validation  
+✅ Session-based test tracking  
+✅ Automatic score calculation  
+✅ Final results summary page  
+✅ Academic examination-style interface  
+✅ Responsive web design  
+
+---
+
+## 🛠️ Technologies Used
 
 ### Backend Development
 
-* **Java** – Core programming language used for application logic
-* **Java Servlets** – Handles HTTP requests, user actions, and application workflow
-* **JSP (JavaServer Pages)** – Used to create dynamic web pages
-* **Jakarta Servlet API** – Provides server-side web functionality
+- Java
+- Java Servlets
+- JSP (JavaServer Pages)
+- Jakarta Servlet API
 
 ### Frontend Development
 
-* **HTML5** – Structures the web pages and user interface
-* **CSS3** – Provides custom styling, responsive layouts, animations, and academic-themed design
-* **Google Fonts** – Used to improve typography and visual presentation
+- HTML5
+- CSS3
+- Google Fonts
 
-### Development Tools & Environment
+### Development Tools
 
-* **NetBeans IDE** – Project development environment
-* **Apache Ant** – Project building and deployment automation
-* **GlassFish Server** – Application deployment and testing environment
+- NetBeans IDE
+- Apache Ant
+- GlassFish Server
 
-### Concepts Implemented
+---
 
-* Object-Oriented Programming (OOP)
-* Model-based web application structure
-* HTTP request and response handling
-* Session management
-* Form processing
-* Input validation
-* Dynamic content rendering
+## 📚 Concepts Implemented
 
-## Project Structure
+- Object-Oriented Programming (OOP)
+- HTTP Request and Response Handling
+- Session Management
+- Form Processing
+- Input Validation
+- Dynamic Content Rendering
 
-```
+---
+
+## 📂 Project Structure
+
+```text
 ArithmeticTestWebApp/
+
+│
+├── screenshots/
+│   ├── home-page.png
+│   ├── test-page.png
+│   └── results-page.png
 │
 ├── src/
 │   └── java/
-│       └── Servlets
+│       └── Servlets/
 │
 ├── web/
-│   ├── JSP Pages
-│   ├── HTML Pages
-│   └── CSS Styling
+│   ├── JSP Pages/
+│   ├── HTML Pages/
+│   └── CSS Styling/
 │
 └── nbproject/
     └── NetBeans Configuration
 ```
 
-## How To Run
+---
 
-1. Clone the repository
+## ▶️ How To Run
+
+Clone the repository:
 
 ```bash
 git clone <repository-url>
 ```
 
-2. Open the project in **NetBeans IDE**
+Open the project in:
 
-3. Configure a Java Web Server:
+```text
+NetBeans IDE
+```
 
-* GlassFish Server recommended
+Configure:
 
-4. Build and run the project
+```text
+GlassFish Server
+```
 
-5. Open the application in your browser
+Build and run the application.
 
-## Purpose
+---
 
-This project was developed to demonstrate practical knowledge of Java web development, server-side programming, user interface design, and building interactive applications.
+# 📸 Screenshots
 
-It showcases the ability to create a complete web application using Java technologies while applying software development principles.
-
-## Future Improvements
-
-* Add database integration
-* Add user accounts and authentication
-* Store previous test results
-* Add difficulty levels
-* Add a timer feature
-* Create an administrator dashboard
-* Improve accessibility features
-
- ## 📸 Screenshots
-
-### Home Page
+## 🏠 Home Page
 
 ![Home Page](screenshots/home-page.png)
 
 ---
 
-### Arithmetic Test Page
+## 📝 Arithmetic Test Page
 
 ![Test Page](screenshots/test-page.png)
 
 ---
 
-### Results Summary Page
+## 📊 Results Summary Page
 
 ![Results Page](screenshots/results-page.png)
- 
+
+---
+
+## 🔮 Future Improvements
+
+- Database integration
+- User accounts and authentication
+- Store previous test results
+- Difficulty levels
+- Timer feature
+- Administrator dashboard
+- Accessibility improvements
+
+---
+
+## 👨‍💻 Developer
+
+**Sabelo Malusi Zwane**
+
+Java Developer | Web Application Developer
+
+Skills:
+
+- Java
+- JSP & Servlets
+- HTML
+- CSS
+- Git & GitHub
